@@ -37,7 +37,7 @@ df_selection1 = perupob_df.query("DEPARTAMENTO == @departamento")
 
 
 col1, col2, col3, col4 = st.columns(4)
-col1.metric("**Poblacion_Total**", value=f"{perupob_df["Total"].sum():,.0f}")
+col1.metric("**Poblacion.Total**", value=f"{perupob_df["Total"].sum():,.0f}")
 col2.metric("**Departamentos**", perupob_df["DEPARTAMENTO"].nunique())
 col3.metric("**Provincias**", perupob_df["PROVINCIA"].nunique())
 col4.metric("**Distritos**", value=f"{perupob_df["DISTRITO"].nunique():,.0f}")
