@@ -1,4 +1,7 @@
 Requirements:
 Streamlit
 Python
-Plotly Express
+plotly.express
+https://www.webfx.com/tools/emoji-cheat-sheet/
+pandas                                                 
+numpy 
