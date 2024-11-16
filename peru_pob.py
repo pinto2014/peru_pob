@@ -1,9 +1,7 @@
-
 import streamlit as st
 import plotly.express as px
 import pandas as pd
 import numpy as np
-import plotnine as p9
 
 
 st.set_page_config(page_title="Poblacion 2020", layout="wide", page_icon=":luggage:")
@@ -26,8 +24,7 @@ perupob_df=perupob.sort_values(by=('Total'), ascending=False)
 
 #to make a sidebar for interactivity:
 st.sidebar.header("Para filtrar la data seleccione:" )
-departamento=st.sidebar.multiselect("Departamento:", 
-                                    options=perupob_df["DEPARTAMENTO"].unique())
+departamento=st.sidebar.multiselect("Departamento:", options=perupob_df["DEPARTAMENTO"].unique())
 
 
 
@@ -37,7 +34,7 @@ df_selection1 = perupob_df.query("DEPARTAMENTO == @departamento")
 
 
 col1, col2, col3, col4 = st.columns(4)
-col1.metric("**Poblacion.Total**", value=f"{perupob_df["Total"].sum():,.0f}")
+col1.metric("**Poblacion_Total**", value=f"{perupob_df["Total"].sum():,.0f}")
 col2.metric("**Departamentos**", perupob_df["DEPARTAMENTO"].nunique())
 col3.metric("**Provincias**", perupob_df["PROVINCIA"].nunique())
 col4.metric("**Distritos**", value=f"{perupob_df["DISTRITO"].nunique():,.0f}")
