@@ -1,5 +1,5 @@
 Requirements:
-Streamlit
+Streamlit==1.40.1
 Python
 plotly_express
 plotly.express
