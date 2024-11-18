@@ -140,7 +140,3 @@ with tab3: #PBI
     chart2_pbi
 
 st.caption("***Baul-Analytics - 2024***")
-
-
-
-
