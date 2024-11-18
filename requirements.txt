@@ -1,7 +1,5 @@
 Streamlit==1.40.1
 Python==3.12
-plotly_express
 plotly.express
 www.webfx.com/tools/emoji-cheat-sheet/
-pandas                                                 
-numpy 
+
