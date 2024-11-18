@@ -1,5 +1,5 @@
 Streamlit==1.40.1
 Python==3.12
-plotly
+plotly==5.22.0
 pandas==2.2.3
 
