@@ -97,7 +97,7 @@ with div4:
     barchart4
     
 #to create Tabs:    
-tab1, tab2, tab3 = st.tabs(["Mapa", "Poblacion", "PBI"])
+tab1, tab2 = st.tabs(["Mapa", "PBI"])
 with tab1: #Map
     map=px.scatter_mapbox(df_selection1, lat=df_selection1['Lat'], lon=df_selection1['Lon'], zoom=8, color=df_selection1['DISTRITO'], 
                  size=df_selection1['Total'], width=1200, height=800, title="Mapa Distrital")
@@ -106,7 +106,7 @@ with tab1: #Map
     #map.show()
     st.plotly_chart(map, use_container_width=True)
 
-with tab3: #PBI
+with tab2: #PBI
     peru_pbi = pd.read_excel('pbi_peru.xlsx', sheet_name='cuadro4', usecols='A:R', header=6)
     peru_pbi1 = peru_pbi.melt(id_vars='DEPARTAMENTO', value_vars=['2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', 
                '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'], var_name='Year', value_name='PBI')
