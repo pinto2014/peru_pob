@@ -5,7 +5,7 @@ import pandas as pd
 from plotly import graph_objects as go
 
 
-st.set_page_config(page_title="Poblacion -Peru2020", layout="centered", page_icon=":luggage:", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Poblacion -Peru2020", layout="wide", page_icon=":luggage:", initial_sidebar_state="auto", menu_items=None)
 st.title("Peru: Poblacion al :red[2020]")
 st.markdown("---")
 #to create Tabs:    
