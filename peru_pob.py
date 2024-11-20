@@ -86,7 +86,7 @@ with div1:
             align='left',
             font=dict(color='black')),
         cells=dict(values=[df_selection1.DEPARTAMENTO, df_selection1.PROVINCIA, df_selection1.DISTRITO, df_selection1.Total],
-            fill_color='White',
+            fill_color='Black',
             align='left')))
     fig.update_layout()
     st.write(fig)
