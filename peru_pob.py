@@ -1,7 +1,7 @@
 import streamlit as st
+import plotly as pt
 import plotly.express as px 
 import pandas as pd
-import numpy as np
 from plotly import graph_objects as go
 
 
@@ -9,7 +9,7 @@ st.set_page_config(page_title="Poblacion 2020", layout="wide", page_icon=":lugga
 st.title("Peru: Poblacion al :red[2020]")
 st.markdown("---")
 #to create Tabs:    
-#tab1, tab2, tab3 = st.tabs(["Mapa", "Poblacion", "PBI"])
+#tab1, tab2, tab3 = st.tabs(["Map", "Poblacion", "PBI"])
 
 st.subheader("Hola! :wave:, :coffee: ")
 st.text("Segun el INEI, La poblacion del Peru al 2020 fue de 32,625,948 habitantes.")
@@ -24,7 +24,7 @@ perupob_df=perupob.sort_values(by=('Total'), ascending=False)
 
 
 #to make a sidebar for interactivity:
-st.sidebar.header("Para filtrar la Poblacion for departamento seleccione:" )
+st.sidebar.header("Para filtrar la data seleccione:" )
 departamento=st.sidebar.multiselect("Departamento:", options=perupob_df["DEPARTAMENTO"].unique())
 
 
@@ -74,9 +74,9 @@ barchart2.update_traces(textfont_size=12, textangle=0, textposition="outside", c
 #st.plotly_chart(barchart2)
 
 # to show two charts in same row:
-#div1, div2=st.columns(spec=[0.5, 0.2])
 div1, div2=st.columns((8,2))
-#with div1:
+#div1, div2=st.columns(spec=[0.6, 0.4])
+with div1:
     #st.dataframe(df_selection1.loc[:,["DEPARTAMENTO", "PROVINCIA", "DISTRITO", "Total"]])
     #st.table(df_selection1.loc[:,["DEPARTAMENTO", "PROVINCIA", "DISTRITO", "Total"]])
     fig= go.Figure(data=go.Table(
@@ -90,6 +90,7 @@ div1, div2=st.columns((8,2))
             align='left')))
     fig.update_layout()
     st.write(fig)
+
 
 #with div2:
     #barchart2
@@ -112,7 +113,7 @@ with div4:
     barchart4
     
 #to create Tabs:    
-tab1, tab2 = st.tabs(["Mapa", "PBI"])
+tab1, tab2 = st.tabs(["Map", "PBI"])
 with tab1: #Map
     map=px.scatter_mapbox(df_selection1, lat=df_selection1['Lat'], lon=df_selection1['Lon'], zoom=8, color=df_selection1['DISTRITO'], 
                  size=df_selection1['Total'], width=1200, height=800, title="Mapa Distrital")
@@ -155,3 +156,4 @@ with tab2: #PBI
 
 st.markdown("---")
 st.caption("***Created by Baul-Analytics - 2024***")
+
