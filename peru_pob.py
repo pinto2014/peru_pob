@@ -79,7 +79,7 @@ div1, div2=st.columns((8,2))
 #with div1:
     #st.dataframe(df_selection1.loc[:,["DEPARTAMENTO", "PROVINCIA", "DISTRITO", "Total"]])
     #st.table(df_selection1.loc[:,["DEPARTAMENTO", "PROVINCIA", "DISTRITO", "Total"]])
-    fig=go.Figure(data=go.Table(
+    fig= go.Figure(data=go.Table(
         columnwidth=[40,40,40,10],
         header=dict(values=list(df_selection1[["DEPARTAMENTO", "PROVINCIA", "DISTRITO", "Total"]].columns),
             fill_color='lightblue',
