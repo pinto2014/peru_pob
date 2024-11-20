@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.express as px 
 import pandas as pd
 import numpy as np
+from plotly import graph_objects as go
 
 
 st.set_page_config(page_title="Poblacion 2020", layout="wide", page_icon=":luggage:")
@@ -75,7 +76,20 @@ barchart2.update_traces(textfont_size=12, textangle=0, textposition="outside", c
 # to show two charts in same row:
 #div1, div2=st.columns(spec=[0.5, 0.2])
 #with div1:
-st.table(df_selection1.loc[:,["DEPARTAMENTO", "PROVINCIA", "DISTRITO", "Total"]])
+#st.dataframe(df_selection1.loc[:,["DEPARTAMENTO", "PROVINCIA", "DISTRITO", "Total"]])
+    #st.table(df_selection1.loc[:,["DEPARTAMENTO", "PROVINCIA", "DISTRITO", "Total"]])
+    fig= go.Figure(data=go.Table(
+        columnwidth=[40,40,40,10],
+        header=dict(values=list(df_selection1[["DEPARTAMENTO", "PROVINCIA", "DISTRITO", "Total"]].columns),
+            fill_color='lightblue',
+            align='left',
+            font=dict(color='black')),
+        cells=dict(values=[df_selection1.DEPARTAMENTO, df_selection1.PROVINCIA, df_selection1.DISTRITO, df_selection1.Total],
+            fill_color='White',
+            align='left')))
+    fig.update_layout()
+    st.write(fig)
+
 #with div2:
     #barchart2
 
