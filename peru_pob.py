@@ -153,4 +153,4 @@ with tab2: #PBI
     chart2_pbi
 
 st.markdown("---")
-st.caption("***Baul-Analytics - 2024***")
+st.caption("***Created by Baul-Analytics - 2024***")
