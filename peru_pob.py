@@ -115,7 +115,7 @@ with div4:
 #to create Tabs:    
 tab1, tab2 = st.tabs(["Map", "PBI"])
 with tab1: #Map
-    map=px.scatter_mapbox(df_selection1, lat=df_selection1['Lat'], lon=df_selection1['Lon'], zoom=8, color=df_selection1['DISTRITO'], 
+    map=px.scatter_mapbox(df_selection1, lat=df_selection1['Lat'], lon=df_selection1['Lon'], zoom=8, color=df_selection1['PROVINCIA'], 
                  size=df_selection1['Total'], width=1200, height=800, title="Mapa Distrital")
     map.update_layout(mapbox_style="open-street-map")
     map.update_layout(margin={"r":0, "t":100, "l":0, "b":10})
