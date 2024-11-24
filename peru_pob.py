@@ -24,7 +24,7 @@ perupob_df=perupob.sort_values(by=('Total'), ascending=False)
 
 
 #to make a sidebar for interactivity:
-st.sidebar.header("Para filtrar la Poblacion por Departamento seleccione:" )
+st.sidebar.header("Para filtrar la Poblacion por Departamento, seleccione:" )
 departamento=st.sidebar.multiselect("Departamento:", options=perupob_df["DEPARTAMENTO"].unique())
 
 
@@ -128,7 +128,7 @@ with tab2: #PBI
                '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'], var_name='Year', value_name='PBI')
     peru_pbi1_df =peru_pbi1.sort_values(by=('PBI'), ascending=False)
 
-    st.sidebar.header("Para filtrar PBI por departamento, seleccione:" )
+    st.sidebar.header("Para filtrar el PBI por Departamento, seleccione:" )
     departamento=st.sidebar.multiselect("Departamento:", 
                                     options=peru_pbi1_df["DEPARTAMENTO"].unique())
    
