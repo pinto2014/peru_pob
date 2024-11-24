@@ -12,7 +12,7 @@ st.markdown("---")
 #tab1, tab2, tab3 = st.tabs(["Map", "Poblacion", "PBI"])
 
 st.subheader("Hola! :wave:, :coffee: ")
-st.text("Segun el INEI, La poblacion del Peru al 2020 fue de 32,625,948 habitantes.")
+st.text("Segun el INEI, La poblacion del Peru al 2020 fue de 32,625,948 habitantes (Peru's population).")
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 
@@ -155,5 +155,5 @@ with tab2: #PBI
     chart2_pbi
 
 st.markdown("---")
-st.caption("***Created by Baul-Analytics - 2024***")
+st.caption("***Created by luisp2024***")
 
