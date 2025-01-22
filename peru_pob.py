@@ -156,5 +156,5 @@ with tab2: #PBI
     chart2_pbi
 
 st.markdown("---")
-st.caption("***Created by luisp2024***")
+st.caption("***Created by lpinto2024***")
 
